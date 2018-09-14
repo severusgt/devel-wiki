@@ -1,0 +1,40 @@
+<?php
+// (c) Copyright 2002-2016 by authors of the Tiki Wiki CMS Groupware Project
+//
+// All Rights Reserved. See copyright.txt for details and a complete list of authors.
+// Licensed under the GNU LESSER GENERAL PUBLIC LICENSE. See license.txt for details.
+// $Id: alchemy.php 66655 2018-06-13 16:49:37Z chibaguy $
+
+function prefs_alchemy_list()
+{
+	return [
+		'alchemy_ffmpeg_path' => [
+			'name' => tra('ffmpeg path'),
+			'description' => tra('Path to the location of the ffmpeg binary'),
+			'type' => 'text',
+			'help' => 'https://www.ffmpeg.org/',
+			'size' => '256',
+			'default' => '/usr/bin/ffmpeg',
+		],
+
+		'alchemy_ffprobe_path' => [
+			'name' => tra('ffprobe path'),
+			'description' => tra('Path to the location of the ffprobe binary'),
+			'type' => 'text',
+			'help' => 'https://ffmpeg.org/ffprobe.html',
+			'size' => '256',
+			'default' => '/usr/bin/ffprobe',
+		],
+		'alchemy_imagine_driver' => [
+			'name' => tra('Alchemy Image library'),
+			'description' => tra('Select either Image Magick or GD Graphics Library.'),
+			'type' => 'list',
+			'options' => [
+				'imagick' => tra('Imagemagick'),
+				'gd' => tra('GD')
+			],
+			'default' => 'imagick',
+		],
+
+	];
+}
